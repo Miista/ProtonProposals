@@ -13,13 +13,15 @@ A person has a name and an age so in other words the tuple `(<name>, <age>)`
 could represent a person.
 To give name to this representation, we collect the data in a record.
 
-Records, then, inherently needs to be equatable. That is, we need to be
-able to compare two persons.
+As records are a collection of values used to represent something, they
+inherently need to be equatable. That is, we need to be able to compare
+two instances of the same record type (e.g. two persons).
 
 A record in Proton is immutable. That is, once it has been declared
 there is no way to mutate the data held in an instance of said record.
 Ways of dealing mutating values stored in a record will be presented
-though these are subject to change based on future proposals (specifically closured from @lalex).
+though these are subject to change based on future proposals (specifically
+closures from @lalex).
 
 ### Assumptions
 
