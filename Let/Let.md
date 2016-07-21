@@ -20,8 +20,8 @@ as the later addition of multiple declarations is rather trivial.
 Proposal
 ========
 
-Local Context
--------------
+Expanded `let`
+--------------
 
 Usually one would declare and use a value as such:
 
@@ -49,8 +49,8 @@ for a `return` statement in a function as such:
       return let a = 2 in a + b
     }
 
-Immutable Reference
--------------------
+Simple `let`
+------------
 
 Using a `let` expression without the `in` block would declare the variable
 in the inclosing scope; in the case of a function the scope would be the
