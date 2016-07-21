@@ -106,7 +106,7 @@ Thus along with a record declaration comes:
 * a compiler-generated method testing for equality
 * a method returning the unique hashcode for the instance
 
-The equality for a record is based on its members meaning that if two
+The equality for a record is based on its members meaning that iff two
 instances have the same value for each and every member, then the two
 instances are considered equal.
 
