@@ -52,31 +52,29 @@ Like in the following example:
 
     record Person(name: String, age: Int)
 
-The part `(name: String, age: Int)` is the record "constructor".
+The part `(name: String, age: Int)` is referred to as the _record constructor_.
 Declaring a record would generate a function with the name of the record
 taking the number of parameters declared in the record constructor.
 
-Declaring a record would also generate accessors for any given attribute
-declared for the record. 
-As in the example both `name` and `age` would be members of the `Person` record
-and accessors would be created for both members.
+Declaring a record would also generate accessors for each given member
+declared in the record constructor.
+As in the example with `Person` both `name` and `age` would be members of
+the `Person` record and accessors would be created for both members.
 
 Usage
 -----
 
+Instantiating a record is done via the function generated when the record
+was declared.
+Thus to create an instance of the `Person` record, we would use the
+following form:
+
+    Person("John Doe", 99)
+
+### Member Access
+
 Accessing a member of a record would be possible using dot-syntax.
 That is `record.memberName`.
-
-The declared record would be instantiated and stored in a variable
-Here `let` is used for declaration of a value. 
-
-    let person = Person("John Doe", 99)
-    let hisAge = person.age
-
-
-A record can be used in place of any other expression in a `let` expression.
-
-    let p = Person("John Doe", 0) in { ... }
 
 ### Mutation
 
