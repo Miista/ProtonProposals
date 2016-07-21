@@ -25,7 +25,8 @@ though these are subject to change based on future proposals (specifically closu
 
 I am making the following assumptions:
 
-* Type names starts with a capital letter (e.g. `Person` instead of `person`)
+* Type names start with a capital letter (e.g. `Person` instead of `person`)
+* Variables and identifiers start with a lowercased letter
 * The type goes on the right side of an expression. (`age: Int` instead of `Int age`)
 * Instantiation does not require `new`
  
@@ -124,17 +125,18 @@ Grammar
 =======
 
 ~~~
-record            = "record", typeName, "(", fieldDeclarations, ")"
-fieldDeclarations = fieldDeclaration, { fieldDeclaration }
-fieldDeclaration  = identifierName, ":", typeName
+record-declaration  = "record", type-name, "(", member-declarations, ")"
+member-declarations = member-declaration, { ",", member-declaration }
+member-declaration  = identifier, ":", type-name
 
-memberAccess      = typeName, ".", identifierName
+member-access       = type-name, ".", identifier
 
-mutateExpr        = typeName, "with", "{", mutateMembers, "}"
-mutateMembers     = mutateMember, { mutateMember }
-mutateMember      = identifierName, "=", expression
+with-expr           = type-name, "with", "{", assignment-list, "}"
+assignment-list     = assignment, { ",", assignment }
+assignment          = identifier, "=", expression
 
 // Below is just the general declaration of identifiers
-typeName          = capitalLetter, { anyLetter }
-identifierName    = lowercaseLetter, { lowercaseLetter }
+type-name           = capitalLetter, { anyLetter }
+identifier          = lowercaseLetter, { lowercaseLetter }
+expression          = ...
 ~~~
