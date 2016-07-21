@@ -1,7 +1,7 @@
 # Let-syntax for Proton
 
-Introducton
-===========
+Introduction
+============
 
 This proposal will introduce `let` expressions in two forms:
 
