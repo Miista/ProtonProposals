@@ -76,6 +76,10 @@ following form:
 Accessing a member of a record would be possible using dot-syntax.
 That is `record.memberName`.
 
+As the member of a record might be a collection or some other type
+that has members itself, this member access is going to be an expression
+such that further "dotting" is possible.
+
 ### Mutation
 
 **NOTE:** This might need to go in its own separate proposal.
