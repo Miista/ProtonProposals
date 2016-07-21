@@ -11,14 +11,17 @@ This proposal will introduce `let` expressions in two forms:
 1\) is referred to as the _expanded_ `let` expression or `let-in` expression,
 and 2) is referred to as simply `let` expression or `let` declaration.
 
+Proposal
+========
+
+This proposal will discuss the introduction of two forms of `let` expressions.
+Both forms allow declaration of variables with varying scope.
+
 For both the expanded `let` expression and the `let` declaration there is
 the possibility of allowing multiple declarations in the `let` block.
 I believe we should possibly start out with just allowing one declaration,
 as the later addition of multiple declarations is rather trivial.
 (On the paper and in the grammar, at least.)
-
-Proposal
-========
 
 Expanded `let`
 --------------
