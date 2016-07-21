@@ -11,5 +11,25 @@ This proposal will introduce `let` expressions in two forms:
 Proposal
 ========
 
+Local Context
+-------------
+
+Usually one would declare and use a value as such:
+
+    double pi = 3.14;
+    double pi2 = pi * 2;
+
+After the declaration of `pi2` the value of `pi` lingers on and clutters
+the namespace when declaring a new variable.
+A `let` expression would be used to introduce scoping to a value declaration.
+The above example would be rewritten such that the variable `pi` only
+exist when declaring `pi2`.
+Using the suggested syntax for `let` expressions, the above example
+would be written as such:
+
+    double pi2 = let pi = 3.14 in pi * 2;
+
+Now, the variable `pi` exists only for the expression `pi * 2`.
+
 Grammar
 =======
