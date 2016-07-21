@@ -123,8 +123,6 @@ p1 == p3 // True!
 Grammar
 =======
 
-### Declaring a Record
-
 ~~~
 record            = "record", typeName, "(", fieldDeclarations, ")"
 fieldDeclarations = fieldDeclaration, { fieldDeclaration }
