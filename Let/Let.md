@@ -80,3 +80,18 @@ reuse the name here for our expanded `let` expression.
 A `let` declaration is **not** equivalent to any other expression meaning
 that it **cannot** be used in a `return` statement.
 
+Grammar
+=======
+
+~~~
+let-expr        = "let", assignment, "in", expression
+assignment      = identifier, "=", expression
+
+let-declaration = "let", assignment
+
+// Below is just the general declaration of identifiers
+type-name       = capitalLetter, { anyLetter }
+identifier      = lowercaseLetter, { lowercaseLetter }
+expression      = let-expr
+                | ...
+~~~
