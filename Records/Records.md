@@ -4,6 +4,7 @@ Introduction
 ============
 
 A record is a collection of data. The prime example is a person.
+
 A record in Proton is immutable. That is, once it has been declared
 there is no way to mutate the data held in an instance of said record.
 
@@ -47,14 +48,21 @@ Accessing a member of a record would be possible using dot-syntax.
 That is `record.memberName`.
 
 The declared record would be instantiated and stored in a variable
+Here `let` is used for declaration of a value. 
 
     let person = Person("John Doe", 99)
     let hisAge = person.age
 
-Here `let` is used for declaration of a value. 
-It could also be used in a `let` expression.
+
+A record can be used in place of any other expression in a `let` expression.
+
+    let p = Person("John Doe", 0) in { ... }
+
+
 
 ### Mutation
+
+**NOTE:** This might need to go in its own separate proposal.
 
 Since records in this proposal is immutable we can't directly
 mutate values.
