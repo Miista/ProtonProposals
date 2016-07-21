@@ -8,6 +8,15 @@ This proposal will introduce `let` expressions in two forms:
 1. As a way of introducing values into a local context
 2. As a way of declaring an immutable reference to some value
 
+1\) is referred to as the _expanded_ `let` expression or `let-in` expression,
+and 2) is referred to as simply `let` expression or `let` declaration.
+
+For both the expanded `let` expression and the `let` declaration there is
+the possibility of allowing multiple declarations in the `let` block.
+I believe we should possibly start out with just allowing one declaration,
+as the later addition of multiple declarations is rather trivial.
+(On the paper and in the grammar, at least.)
+
 Proposal
 ========
 
