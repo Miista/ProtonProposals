@@ -40,5 +40,43 @@ would be written as such:
 
 Now, the variable `pi` exists only for the expression `pi * 2`.
 
-Grammar
-=======
+### Relation to Expression
+A `let` expression in this expanded fashion would be equivalent to any
+other expression meaning that an expanded `let` expression could be used
+for a `return` statement in a function as such:
+
+    function Fun(b: Int) {
+      return let a = 2 in a + b
+    }
+
+Immutable Reference
+-------------------
+
+Using a `let` expression without the `in` block would declare the variable
+in the inclosing scope; in the case of a function the scope would be the
+function. In the case of an `if`-statement, the enclosing scope would be
+the branch the `let` expression is declared in.
+
+    function makeName() {
+      let surname = "Doe"
+      if (true) {
+        let name = "John"
+        return name + " " + surname
+      } else {
+        // name is out of scope here
+        // so we can safely use the name again
+        return let name = "Jane" in name + " " + surname
+      }
+      // name is out of scope here
+    }
+
+In the example above `surname` is in scope for the duration of `makePerson`
+and `name` is in scope for the `true` branch of the `if`-statement.
+Note that since `name` is not in scope in the `else` branch, we can safely
+reuse the name here for our expanded `let` expression.
+
+### Relation to Expression
+
+A `let` declaration is **not** equivalent to any other expression meaning
+that it **cannot** be used in a `return` statement.
+
