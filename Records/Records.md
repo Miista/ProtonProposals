@@ -91,9 +91,40 @@ We need some way to mutate and update values in a record.
 
 I propose to introduce the keyword `with` for mutating one or several
 members of a record.
+See below example.
 
     let person1 = person with { age = 5 } // Will create a new instance of Person with age set to 5
     let person2 = person with { age = 5, name = "Jane" }
+
+#### Internal Implementation
+
+Taking a note from the C# design team, we could let the `with` expression
+compile to a function call on the record.
+This function (let's call it `With` with a capitalized "w") would be a
+function whose parameters all had their default values set to the actual
+values for the record instance.
+
+Thus, for the `Person` record -- declared below -- the `With` function 
+would look like this:
+
+    let p1 = Person("Jane Doe", 12)
+    With(name: String = "Jane Doe", age: Int = 12) { ... }
+
+This would translate the following:
+
+    let p2 = p1 with { name = "John", age = 5 }
+    let p3 = p2 with { name = "Shaun" }
+
+into this:
+
+    let p2 = p1.With("John", 5)
+    let p3 = p2.With("Shaun", 5)
+
+This way of doing it probably uses positional arguments and I don't know
+whether we want to go with named or positional arguments for optional
+parameters.
+This part of the proposal will most likely have to wait until we decide
+which of the two we want to pursue.
 
 "Magic"
 -------
