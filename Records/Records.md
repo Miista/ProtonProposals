@@ -62,8 +62,6 @@ A record can be used in place of any other expression in a `let` expression.
 
     let p = Person("John Doe", 0) in { ... }
 
-
-
 ### Mutation
 
 **NOTE:** This might need to go in its own separate proposal.
@@ -77,6 +75,26 @@ members of a record.
 
     let person1 = person with { age = 5 } // Will create a new instance of Person with age set to 5
     let person2 = person with { age = 5, name = "Jane" }
+
+"Magic"
+=======
+
+A record is inherently equatable meaning that when a record is declared,
+the compiler will generate a hashcode for the record type and implement
+the "equals" function on the record type -- however we decide to do this.
+
+The equality for a record is based on its members meaning that if two
+instances have the same value for each and every member, then the two
+instances are considered equal.
+
+~~~
+let p1 = Person("Name", 0)
+let p2 = Person("Name", 1)
+let p3 = p2 with { age = 0 }
+
+p1 == p2 // False!
+p2 == p3 // False!
+p1 == p3 // True!
 
 Grammar
 =======
