@@ -92,9 +92,14 @@ members of a record.
 "Magic"
 =======
 
-A record is inherently equatable meaning that when a record is declared,
-the compiler will generate a hashcode for the record type and implement
-the "equals" function on the record type -- however we decide to do this.
+As records will most likely be used for representing a collection
+of values we need to ensure that there exists a straightforward way
+of testing for equality.
+
+Thus along with a record declaration comes:
+
+* a compiler-generated method testing for equality
+* a method returning the unique hashcode for the instance
 
 The equality for a record is based on its members meaning that if two
 instances have the same value for each and every member, then the two
@@ -108,6 +113,7 @@ let p3 = p2 with { age = 0 }
 p1 == p2 // False!
 p2 == p3 // False!
 p1 == p3 // True!
+~~~
 
 Grammar
 =======
