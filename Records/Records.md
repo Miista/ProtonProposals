@@ -3,10 +3,23 @@
 Introduction
 ============
 
+This proposal will introduce the concept of records along with
+two new keywords `record` and `with`.
+
+What is a record?
+
 A record is a collection of data. The prime example is a person.
+A person has a name and an age so in other words the tuple `(<name>, <age>)`
+could represent a person.
+To give name to this representation, we collect the data in a record.
+
+Records, then, inherently needs to be equatable. That is, we need to be
+able to compare two persons.
 
 A record in Proton is immutable. That is, once it has been declared
 there is no way to mutate the data held in an instance of said record.
+Ways of dealing mutating values stored in a record will be presented
+though these are subject to change based on future proposals (specifically closured from @lalex).
 
 ### Assumptions
 
