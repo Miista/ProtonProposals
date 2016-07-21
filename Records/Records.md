@@ -40,8 +40,11 @@ Just for clarity, the features outlined in this proposal is the following:
 1. Declaration of a record
 2. Generation "magic" for records
 
+Proposal
+========
+
 Declaration
-===========
+-----------
 
 Declaring a record should ideally be as simple as possible.
 I propose to introduce `record` as a keyword.
@@ -59,7 +62,7 @@ As in the example both `name` and `age` would be members of the `Person` record
 and accessors would be created for both members.
 
 Usage
-=====
+-----
 
 Accessing a member of a record would be possible using dot-syntax.
 That is `record.memberName`.
@@ -90,7 +93,7 @@ members of a record.
     let person2 = person with { age = 5, name = "Jane" }
 
 "Magic"
-=======
+-------
 
 As records will most likely be used for representing a collection
 of values we need to ensure that there exists a straightforward way
