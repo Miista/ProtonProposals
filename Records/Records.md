@@ -36,6 +36,10 @@ Like in the following example:
 
     record Person(name: String, age: Int)
 
+The part `(name: String, age: Int)` is the record "constructor".
+Declaring a record would generate a function with the name of the record
+taking the number of parameters declared in the record constructor.
+
 Declaring a record would also generate accessors for any given attribute
 declared for the record. 
 As in the example both `name` and `age` would be members of the `Person` record
